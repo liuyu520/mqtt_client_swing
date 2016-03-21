@@ -1015,11 +1015,13 @@ public class MqttClientSwing extends GenericFrame {
      * @return 是否启动成功
      */
     private boolean connect(String BROKER_URL, String clientId, String TOPIC, boolean isCleanSession) {
-        if (!validateClientId(clientId)) {
-            return false;
-        }
         String sign;
         boolean isAliyun = isAliyuncheckBox.isSelected();
+        if (isAliyun) {
+            if (!validateClientId(clientId)) {
+                return false;
+            }
+        }
         try {
             ComponentUtil.appendResult(resultTextPane, "connect start time:" + TimeHWUtil.getCurrentMiniuteSecond(), false);
             mqttClient = new MqttClient(BROKER_URL, clientId, new MemoryPersistence());
