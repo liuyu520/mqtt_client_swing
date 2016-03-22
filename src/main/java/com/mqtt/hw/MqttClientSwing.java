@@ -75,6 +75,10 @@ public class MqttClientSwing extends GenericFrame {
      * 订阅的主题
      */
     public static final String PROP_KEY_TOPIC = "topic";
+    /***
+     * 是否是阿里云消息队列MQ
+     */
+    public static final String PROP_KEY_IS_aliyun_mq_ONS = "is_aliyun_mq_ONS";
     public static final String PROP_KEY_CLIENT_ID = "client_id";
     public static final String PROP_KEY_USERNAME = "mqtt_username";
     public static final String PROP_KEY_PASSWORD = "mqtt_password";
@@ -242,7 +246,7 @@ public class MqttClientSwing extends GenericFrame {
         panelMqtt.add(panel_2, gbc_panel_2);
 
         isAliyuncheckBox = new JCheckBox("是否是阿里云");
-        isAliyuncheckBox.setSelected(true);
+//        isAliyuncheckBox.setSelected(true);
         panel_2.add(isAliyuncheckBox);
 
 
@@ -833,7 +837,11 @@ public class MqttClientSwing extends GenericFrame {
         serverIp22 = props.getProperty(PROP_KEY_IP);
         port22 = props.getProperty(PROP_KEY_PORT_TF);
         topic22 = props.getProperty(PROP_KEY_TOPIC);
-
+        String isAliyunStr = props.getProperty(PROP_KEY_IS_aliyun_mq_ONS);
+        boolean isAliyun = "true".equalsIgnoreCase(isAliyunStr);
+        if (isAliyun) {
+            isAliyuncheckBox.setSelected(isAliyun);
+        }
         setSwingInput(clientIdTextField, PROP_KEY_CLIENT_ID);
         setSwingInput(usernameTextField, PROP_KEY_USERNAME);
         setSwingInput(passwordTextField, PROP_KEY_PASSWORD);
@@ -1241,7 +1249,7 @@ public class MqttClientSwing extends GenericFrame {
         if (!ValueWidget.isNullOrEmpty(mqtt_password2)) {
             props.setProperty(PROP_KEY_PASSWORD, mqtt_password2);
         }
-
+        props.setProperty(PROP_KEY_IS_aliyun_mq_ONS, String.valueOf(isAliyuncheckBox.isSelected()));
         setCombox(PROP_KEY_PORT_COMBOBOX, portTextField, portComboBox, false);
 
         setCombox(PROP_KEY_CLIENT_ID_COMBOBOX, clientIdTextField, clientIdComboBox, false);
