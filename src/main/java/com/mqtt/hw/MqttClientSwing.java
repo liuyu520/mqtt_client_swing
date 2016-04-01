@@ -983,13 +983,13 @@ public class MqttClientSwing extends GenericFrame {
         ComponentUtil.appendResult(resultTextPane, "receive time:" + TimeHWUtil.getCurrentMiniuteSecond(), false);
         ComponentUtil.appendResult(resultTextPane, message, MqttClientSwing.HTML_RED, true);
         //保证文本域始终保持在底部
-//		DefaultCaret caret = (DefaultCaret)resultTextPane.getCaret();
-//    	caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
+        DefaultCaret caret = (DefaultCaret) resultTextPane.getCaret();
+        caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
         resultTextPane.setSelectionStart(resultTextPane.getText().length());
-//    	scrollPane.scrollRectToVisible(new Rectangle(0,this.getBounds(null).height+200,1,1));
+        scrollPane.scrollRectToVisible(new Rectangle(0, this.getBounds(null).height + 200, 1, 1));
         JScrollBar vertical = scrollPane.getVerticalScrollBar();
         vertical.setValue(vertical.getMaximum());
-//    	repaintFrame();
+        repaintFrame();
 
     }
 
