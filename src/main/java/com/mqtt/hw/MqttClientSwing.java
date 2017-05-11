@@ -852,14 +852,21 @@ public class MqttClientSwing extends GenericFrame {
 //		if(ValueWidget.isNullOrEmpty(prop)){
 //			prop= GenericReadPropsUtil.getProperties(false, CONF_PATH);
 //		}
-        if (ValueWidget.isNullOrEmpty(prop) && ValueWidget.isNullOrEmpty(props)) {
+        if (ValueWidget.isNullOrEmpty(prop)  ) {
+        if(ValueWidget.isNullOrEmpty(props)){
             return;
+            }else{
+            prop = props;
+            }
         }
         String key2 = "selected_index";
         if (ValueWidget.isNullOrEmpty(prop)) {
             selectedIndex = 0;
         } else {
-            selectedIndex = Integer.parseInt(prop.getProperty(key2));
+        String selectedIndexStr =prop.getProperty(key2);
+        if (null != selectedIndexStr) {
+            selectedIndex = Integer.parseInt(selectedIndexStr);
+            }
         }
 
         String propValue = null;
