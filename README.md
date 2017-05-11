@@ -8,4 +8,4 @@ java swing
 https://github.com/liuyu520/io0007
 
 # 运行截图
-![程序运行截图](<img style="max-width: 99%" src="http://blog.yhskyc.com/convention2/upload/image/20170511212117_722_2017-05-11_21-20-41.jpg" alt="不是图片,无法显示">)
+![程序运行截图](http://blog.yhskyc.com/convention2/upload/image/20170511212117_722_2017-05-11_21-20-41.jpg)
