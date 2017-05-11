@@ -777,7 +777,7 @@ public class MqttClientSwing extends GenericFrame {
             @Override
             public void windowClosed(WindowEvent e) {
                 /*System.out.println("closed");
-				try {
+                try {
 					saveConfig();
 				} catch (IOException e1) {
 					e1.printStackTrace();
@@ -852,20 +852,20 @@ public class MqttClientSwing extends GenericFrame {
 //		if(ValueWidget.isNullOrEmpty(prop)){
 //			prop= GenericReadPropsUtil.getProperties(false, CONF_PATH);
 //		}
-        if (ValueWidget.isNullOrEmpty(prop)  ) {
-        if(ValueWidget.isNullOrEmpty(props)){
-            return;
-            }else{
-            prop = props;
+        if (ValueWidget.isNullOrEmpty(prop)) {
+            if (ValueWidget.isNullOrEmpty(props)) {
+                return;
+            } else {
+                prop = props;
             }
         }
         String key2 = "selected_index";
         if (ValueWidget.isNullOrEmpty(prop)) {
             selectedIndex = 0;
         } else {
-        String selectedIndexStr =prop.getProperty(key2);
-        if (null != selectedIndexStr) {
-            selectedIndex = Integer.parseInt(selectedIndexStr);
+            String selectedIndexStr = prop.getProperty(key2);
+            if (null != selectedIndexStr) {
+                selectedIndex = Integer.parseInt(selectedIndexStr);
             }
         }
 
