@@ -258,7 +258,7 @@ public class MqttClientSwing extends GenericFrame {
         panelMqtt.add(label_ip, gbc_label_3ip);
 
         ipComboBox = new JComboBox<String>();
-        ipComboBox.addMouseListener(new MouseAdapter() {
+        /*ipComboBox.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 String selectedPort = (String) ipComboBox.getSelectedItem();
@@ -267,20 +267,22 @@ public class MqttClientSwing extends GenericFrame {
                 }
 //				System.out.println(e.getSource());
             }
-        });
+        });*/
+
 //		portComboBox.addItem(String.valueOf(1881));
 //		portComboBox.addItem(String.valueOf(1882));
 //		portComboBox.addItem(String.valueOf(1883));
         //设置默认选中的项
 //		portComboBox.setSelectedIndex(2);
-        ipComboBox.addItemListener(new ItemListener() {
+        /*ipComboBox.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 String selectedPort = (String) ipComboBox.getSelectedItem();
                 if (!ValueWidget.isNullOrEmpty(selectedPort)) {
                     ipTextField.setText(selectedPort);
                 }
             }
-        });
+        });*/
+        ComponentUtil.comboBoxSelectedHandle(ipComboBox, ipTextField);
         GridBagConstraints gbc_ipComboBox2 = new GridBagConstraints();
         gbc_ipComboBox2.insets = new Insets(0, 0, 5, 0);
         gbc_ipComboBox2.fill = GridBagConstraints.HORIZONTAL;
@@ -332,7 +334,7 @@ public class MqttClientSwing extends GenericFrame {
         panelMqtt.add(label_3, gbc_label_3);
 
         portComboBox = new JComboBox<String>();
-        portComboBox.addMouseListener(new MouseAdapter() {
+        /*portComboBox.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 String selectedPort = (String) portComboBox.getSelectedItem();
@@ -341,20 +343,21 @@ public class MqttClientSwing extends GenericFrame {
                 }
 //				System.out.println(e.getSource());
             }
-        });
+        });*/
 //		portComboBox.addItem(String.valueOf(1881));
 //		portComboBox.addItem(String.valueOf(1882));
 //		portComboBox.addItem(String.valueOf(1883));
         //设置默认选中的项
 //		portComboBox.setSelectedIndex(2);
-        portComboBox.addItemListener(new ItemListener() {
+        /*portComboBox.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 String selectedPort = (String) portComboBox.getSelectedItem();
                 if (!ValueWidget.isNullOrEmpty(selectedPort)) {
                     portTextField.setText(selectedPort);
                 }
             }
-        });
+        });*/
+        ComponentUtil.comboBoxSelectedHandle(portComboBox, portTextField);
         GridBagConstraints gbc_topicComboBox = new GridBagConstraints();
         gbc_topicComboBox.insets = new Insets(0, 0, 5, 0);
         gbc_topicComboBox.fill = GridBagConstraints.HORIZONTAL;
@@ -441,7 +444,7 @@ public class MqttClientSwing extends GenericFrame {
         gbc_comboBox_clientId.gridx = 2;
         gbc_comboBox_clientId.gridy = 9;
         panelMqtt.add(clientIdComboBox, gbc_comboBox_clientId);
-        clientIdComboBox.addMouseListener(new MouseAdapter() {
+       /* clientIdComboBox.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 String selectedPort = (String) clientIdComboBox.getSelectedItem();
@@ -450,19 +453,19 @@ public class MqttClientSwing extends GenericFrame {
                 }
 //				System.out.println(e.getSource());
             }
-        });
+        });*/
         clientIdComboBox.addItem("864587025867988_898600");
         //设置默认选中的项
 //		clientIdComboBox.setSelectedIndex(2);
-        clientIdComboBox.addItemListener(new ItemListener() {
+        /*clientIdComboBox.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 String selectedPort = (String) clientIdComboBox.getSelectedItem();
                 if (!ValueWidget.isNullOrEmpty(selectedPort)) {
                     clientIdTextField.setText(selectedPort);
                 }
             }
-        });
-
+        });*/
+        ComponentUtil.comboBoxSelectedHandle(clientIdComboBox, clientIdTextField);
         JLabel lblTopic = new JLabel("topic");
         GridBagConstraints gbc_lblTopic = new GridBagConstraints();
         gbc_lblTopic.insets = new Insets(0, 0, 5, 5);
@@ -494,7 +497,7 @@ public class MqttClientSwing extends GenericFrame {
         gbc_topicComboBox2.gridx = 2;
         gbc_topicComboBox2.gridy = 11;
         panelMqtt.add(topicComboBox, gbc_topicComboBox2);
-        topicComboBox.addMouseListener(new MouseAdapter() {
+        /*topicComboBox.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 String selectedPort = (String) topicComboBox.getSelectedItem();
@@ -503,17 +506,18 @@ public class MqttClientSwing extends GenericFrame {
                 }
 //				System.out.println(e.getSource());
             }
-        });
+        });*/
         //设置默认选中的项
 //		clientIdComboBox.setSelectedIndex(2);
-        topicComboBox.addItemListener(new ItemListener() {
+        /*topicComboBox.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 String selectedPort = (String) topicComboBox.getSelectedItem();
                 if (!ValueWidget.isNullOrEmpty(selectedPort)) {
                     topicTextField.setText(selectedPort);
                 }
             }
-        });
+        });*/
+        ComponentUtil.comboBoxSelectedHandle(topicComboBox, topicTextField);
 
         JLabel label_1 = new JLabel("是否持久化");
         GridBagConstraints gbc_label_1 = new GridBagConstraints();
