@@ -17,8 +17,8 @@ public class MqttDemo {
         String secretKey = null;
         String clientId = null;
         broker = "tcp://mqtt.ons.aliyun.com:1883";
-        acessKey = "BujIyjCm6uUBXxzd";
-        secretKey = "7RRuJFJskTZvNLHQWN4Ub6TG46OUEc";
+        acessKey = "K/xLogkkD/AAkQ4qDmmeR61qiLT6N4M9";//已加密
+        secretKey = "79PkBKPGRsLWsJV5Du8Tu1rkRAdW+75uSihfd7LTFAA=";//已加密
         final String topic = "com_hbjltv";
         // 如果该设备需要接收点对点的推送，那么需要订阅二级topic，topic/p2p/，但凡以topic/p2p/为前缀的，都认为是点
         // 对点推送
